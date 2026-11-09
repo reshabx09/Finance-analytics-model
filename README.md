@@ -1,31 +1,16 @@
-# FinSight — Finance Analytics & Cash Flow Manager
+# React + Vite
 
-A full-stack MERN financial tracking and analytics application.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
-- **User Authentication:** Signup/login/logout with email OTP verification, bcrypt password hashing, and JWT security.
-- **Categorized Transaction Management:** Manual category selection for transactions (`Necessities`, `Luxuries`, `Assets`, `Investment`, `Savings`, `Income / Salary`, `Others`).
-- **Real-Time Financial Dashboard:** Instant calculations for Total Credit, Total Debit, Net Balance, and custom balance overrides.
-- **Visual Analytics:** Interactive Recharts Donut & Bar charts analyzing category spending distribution and cash flow comparisons.
-- **MongoDB Persistence:** Stored in MongoDB with offline-first `localStorage` resilience.
+Currently, two official plugins are available:
 
-## Run
-### 1. MongoDB
-Run MongoDB locally, or copy `backend/.env.example` to `backend/.env` and set `DB_URL`, `AUTH_SECRET`, `SENDER_EMAIL`, and `SENDER_PASSWORD`.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-### 2. Backend
-```bash
-cd backend
-npm install
-npm run dev
-```
-Runs on `http://localhost:3030`.
+## React Compiler
 
-### 3. Frontend
-```bash
-cd frontend
-cp .env.example .env
-npm install
-npm run dev
-```
-Runs on `http://localhost:5173`.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

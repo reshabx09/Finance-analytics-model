@@ -1,0 +1,1 @@
+import {Router} from "express"; import {requireAuth} from "../middleware/auth.js"; import * as c from "./expense.controller.js"; const r=Router(); r.use(requireAuth); r.get("/",c.list); r.post("/",c.create); r.put("/:id",c.update); r.delete("/:id",c.remove); export default r;

@@ -1,0 +1,5 @@
+import Expense from "./expense.model.js";
+export const list=async(req,res)=>res.json({items:await Expense.find({userId:req.user.id}).sort({date:-1})});
+export const create=async(req,res)=>{try{const {amount,category,description,date,paymentMethod}=req.body;if(!amount||!category)return res.status(400).json({message:"Amount and category are required"});const item=await Expense.create({userId:req.user.id,amount,category,description,date,paymentMethod});res.status(201).json({item});}catch(e){res.status(400).json({message:e.message})}};
+export const update=async(req,res)=>{const item=await Expense.findOneAndUpdate({_id:req.params.id,userId:req.user.id},req.body,{new:true,runValidators:true});if(!item)return res.status(404).json({message:"Expense not found"});res.json({item})};
+export const remove=async(req,res)=>{const item=await Expense.findOneAndDelete({_id:req.params.id,userId:req.user.id});if(!item)return res.status(404).json({message:"Expense not found"});res.json({message:"Expense deleted"})};
